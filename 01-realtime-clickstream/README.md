@@ -21,10 +21,10 @@ Event Producer → S3 (raw JSONL) → Glue Data Catalog (schema + partitions) �
 ## Screenshots (AWS Console proof)
 
 ### 1) S3 raw prefix
-![S3 Raw Prefix](screenshots/s3_raw_prefix.jpeg)
+![S3 Raw Prefix](screenshots/s3_raw_prefix.png)
 
 ### 2) Athena tables and query results
-![Athena Query Results](screenshots/athens_query_results.jpeg)
+![Athena Query Results](screenshots/athena_partitions_filter.png)
 
 ### 3) Athena raw sample
 ![Athena Raw Sample](screenshots/athena_raw_sample.png)
@@ -33,7 +33,7 @@ Event Producer → S3 (raw JSONL) → Glue Data Catalog (schema + partitions) �
 ![Athena Parquet Sample](screenshots/athena_parquet_sample.png)
 
 ### 5) Athena partitions
-![Athena Partitions](screenshots/athena_partitions.png)
+![Athena Partitions](screenshots/athena_counts_by_day.png)
 
 ### 6) Athena user analytics
 ![Athena User Analytics](screenshots/athena_user_analytics.png)
@@ -43,7 +43,13 @@ Event Producer → S3 (raw JSONL) → Glue Data Catalog (schema + partitions) �
 ## Data layout (S3)
 Raw data is stored using time-based partitions:
 
-s3://de-portfolio-clickstream-chandu-1221/raw/clickstream/year=YYYY/month=MM/day=DD/hour=HH/*.jsonl
+s3://de-portfolio-clickstream-chandu-1221/
+  raw/clickstream/
+    year=YYYY/
+      month=MM/
+        day=DD/
+          hour=HH/
+            *.jsonl
 
 ---
 ## Services used:

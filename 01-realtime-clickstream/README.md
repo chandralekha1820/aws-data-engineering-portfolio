@@ -66,7 +66,6 @@ Athena uses this catalog to run SQL without loading data into a database.
 ## Screenshots (proof)
 Put screenshots in `screenshots/`:
 - S3 raw prefix visible
-- Athena table created
 - Athena query results
 
 ---
